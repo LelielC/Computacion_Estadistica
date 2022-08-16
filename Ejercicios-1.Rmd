@@ -1,0 +1,201 @@
+---
+title: "Ejercicios Computación"
+author: "Venus Puertas \\  Daniel Mesias  \\ Julieth Moreno"
+date: '2022-08'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ejercicio English Premiere league
+
+Para este ejercicio se importan los conjuntos de datos usando la librería readxl de R, por ello lo primero que hacemos es cargar la librería.
+
+```{r}
+library(readxl)
+```
+
+Ahora vamos a cargar el conjunto de datos season-1415.xlsx, para ello se usa la función read_excel() y especificamos el nombre de las columnas que queremos que R lea con col_names, adicionalmente con col_type le esepcificamos cómo debe leerlas y cuáles debe omitir. Dado que le estamos especificando los nombres de las columnas, debemos usar el argumento skip=1 para que evite leer la primera línea donde se encuentran los títulos.
+
+```{r}
+season1415<-read_excel("season-1415.xlsx",col_names=c("Season","Date","HomeTeam"
+,"HomeAway","FTHG","FTAG","Referee","HS","AS","HST","AST","HF","AF","HC","AC",
+"HY","AY","HR", "AR") ,col_types = c("text", "date", "text", "text", "numeric",
+"numeric","skip", "skip", "skip", "skip", "text", "numeric","numeric","numeric",
+"numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric",
+"numeric"), skip=1)
+str(season1415)
+```
+
+A continuación vamos a personalizar el nombre y tipo de variables del archivo season-1415.xlsx
+
+```{r}
+season1415.2<-read_excel("season-1415.xlsx",sheet = 1, skip = 1,  col_names = 
+c("Temp", "Fecha","E.local", "E.visitante", "GLTC", "GVTC", "Arbitro", "DL", 
+"DV", "DAL", "DAV", "FL", "FV", "FLL", "FLV", "TAL", "TAV", "TRL", "TRV"), 
+col_types = c("text", "date", "text", "text","numeric","numeric","skip", "skip", 
+"skip", "skip", "text", "numeric","numeric","numeric","numeric","numeric","numeric"
+,"numeric","numeric","numeric","numeric","numeric","numeric"))
+str(season1415.2)
+```
+
+Para el archivo season-1516.xlsx
+
+```{r}
+season1516<-read_excel("season-1415.xlsx",col_names=c("Season","Date","HomeTeam"
+,"HomeAway","FTHG","FTAG","Referee","HS","AS","HST","AST","HF","AF","HC","AC",
+"HY","AY","HR", "AR") ,col_types = c("text", "date", "text", "text", "numeric",
+"numeric","skip", "skip", "skip", "skip", "text", "numeric","numeric","numeric",
+"numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric",
+"numeric"), skip=1)
+str(season1516)
+```
+
+A continuación vamos a personalizar el nombre y tipo de variables del archivo season-1516.xlsx
+
+```{r}
+season1516.2<-read_excel("season-1516.xlsx",sheet = 1, skip = 1,  col_names = 
+c("Temp", "Fecha","E.local", "E.visitante", "GLTC", "GVTC", "Arbitro", "DL", 
+"DV", "DAL", "DAV", "FL", "FV", "FLL", "FLV", "TAL", "TAV", "TRL", "TRV"), 
+col_types = c("text", "date", "text", "text","numeric","numeric","skip", "skip", 
+"skip", "skip", "text", "numeric","numeric","numeric","numeric","numeric","numeric"
+,"numeric","numeric","numeric","numeric","numeric","numeric"))
+str(season1516.2)
+```
+
+Para el archivo season-1617.xlsx
+
+```{r}
+season1617<-read_excel("season-1617.xlsx",col_names=c("Season","Date","HomeTeam"
+,"HomeAway","FTHG","FTAG","Referee","HS","AS","HST","AST","HF","AF","HC","AC",
+"HY","AY","HR", "AR") ,col_types = c("text", "date", "text", "text", "numeric",
+"numeric","skip", "skip", "skip", "skip", "text", "numeric","numeric","numeric",
+"numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric",
+"numeric"), skip=1)
+str(season1617)
+```
+
+A continuación vamos a personalizar el nombre y tipo de variables del archivo season-1617.xlsx
+
+```{r}
+season1617.2<-read_excel("season-1617.xlsx",sheet = 1, skip = 1,  col_names = 
+c("Temp", "Fecha","E.local", "E.visitante", "GLTC", "GVTC", "Arbitro", "DL", 
+"DV", "DAL", "DAV", "FL", "FV", "FLL", "FLV", "TAL", "TAV", "TRL", "TRV"), 
+col_types = c("text", "date", "text", "text","numeric","numeric","skip", "skip", 
+"skip", "skip", "text", "numeric","numeric","numeric","numeric","numeric","numeric"
+,"numeric","numeric","numeric","numeric","numeric","numeric"))
+str(season1617.2)
+```
+
+Para el archivo season-1718.xlsx
+
+```{r}
+season1718<-read_excel("season-1718.xlsx",col_names=c("Season","Date","HomeTeam"
+,"HomeAway","FTHG","FTAG","Referee","HS","AS","HST","AST","HF","AF","HC","AC",
+"HY","AY","HR", "AR") ,col_types = c("text", "date", "text", "text", "numeric",
+"numeric","skip", "skip", "skip", "skip", "text", "numeric","numeric","numeric",
+"numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric",
+"numeric"), skip=1)
+str(season1718)
+```
+
+A continuación vamos a personalizar el nombre y tipo de variables del archivo season-1718.xlsx
+
+```{r}
+season1718.2<-read_excel("season-1718.xlsx",sheet = 1, skip = 1,  col_names = 
+c("Temp", "Fecha","E.local", "E.visitante", "GLTC", "GVTC", "Arbitro", "DL", 
+"DV", "DAL", "DAV", "FL", "FV", "FLL", "FLV", "TAL", "TAV", "TRL", "TRV"), 
+col_types = c("text", "date", "text", "text","numeric","numeric","skip", "skip", 
+"skip", "skip", "text", "numeric","numeric","numeric","numeric","numeric","numeric"
+,"numeric","numeric","numeric","numeric","numeric","numeric"))
+str(season1718.2)
+```
+
+Para el archivo season-1819.xlsx
+
+```{r}
+season1819<-read_excel("season-1819.xlsx",col_names=c("Season","Date","HomeTeam"
+,"HomeAway","FTHG","FTAG","Referee","HS","AS","HST","AST","HF","AF","HC","AC",
+"HY","AY","HR", "AR") ,col_types = c("text", "date", "text", "text", "numeric",
+"numeric","skip", "skip", "skip", "skip", "text", "numeric","numeric","numeric",
+"numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric",
+"numeric"), skip=1)
+str(season1819)
+```
+
+A continuación vamos a personalizar el nombre y tipo de variables del archivo season-1819.xlsx
+
+```{r}
+season1819.2<-read_excel("season-1819.xlsx",sheet = 1, skip = 1,  col_names = 
+c("Temp", "Fecha","E.local", "E.visitante", "GLTC", "GVTC", "Arbitro", "DL", 
+"DV", "DAL", "DAV", "FL", "FV", "FLL", "FLV", "TAL", "TAV", "TRL", "TRV"), 
+col_types = c("text", "date", "text", "text","numeric","numeric","skip", "skip", 
+"skip", "skip", "text", "numeric","numeric","numeric","numeric","numeric","numeric"
+,"numeric","numeric","numeric","numeric","numeric","numeric"))
+str(season1819.2)
+```
+
+De acuerdo a la información que nos brinda R con la función str() podemos ver que todos los conjuntos de datos cuentan con 380 registros cada uno.
+
+## Ejercicio IMDb
+
+Para desarrollar este ejercicio usaremos la libreria "readr" por lo cual el primer paso es cargarla.
+
+```{r}
+library(readr)
+```
+
+Para poder cargar los archivos sin descargarlos y descomprimirlos previamente usaremos la función read_delim() de la librería.
+
+A continuación importamos los datos de title.basics, solamente las primeras 5000 observaciones y especificando las columnas como caracter, factor, caracter, caracter, lógico, fecha en año, fecha en año, tiempo en minutos y factor respectivamente.
+
+```{r}
+tbasics<-read_delim('https://datasets.imdbws.com/title.basics.tsv.gz',n_max=5000,
+                    col_types = cols('c','f','c','c','l',col_date('%Y'),col_date('%Y'),
+                                     col_time('%M'),'f'))
+str(tbasics)
+```
+
+Este conjunto de datos cuenta con 9 variables y sus formatos son: Texto, Factor, Texto, Texto, Valor Lógico, Fecha, Fecha, Fecha y factor. 
+
+Ahora vamos a cargar las primeras 5000 observaciones de title.principals omitiendo la variable ordering y tomando las demás columnas como texto.
+
+```{r}
+tprincipals<-read_delim('https://datasets.imdbws.com/title.principals.tsv.gz',n_max=5000,
+                        col_types=cols('c','-','c','c','c','c'))
+
+str(tprincipals)
+```
+
+Este conjunto de datos tiene 5 variables todas en formato texto.
+
+Ahora vamos a cargar las primeras 5000 observaciones de name.basics omitiendo la variable knownForTitles y tomando las demás columnas como caracter, caracter, fecha en año, fecha en año y caracter respectivamente.
+
+```{r}
+nbasics<-read_delim('https://datasets.imdbws.com/name.basics.tsv.gz',n_max=5000,
+                    col_types=cols('c','c',col_date('%Y'),col_date('%Y'),'c','-'))
+
+str(nbasics)
+```
+
+Este conjunto de datos tiene 5 Variables en los formatos: Texto, Texto, Fecha, Fecha y Texto.
+
+## Ejercicio Shows en Netflix
+
+Para este ejercicio nuevamente usamos la función read_delim() de la libreria "readr" por lo que la cargamos primero.
+
+```{r}
+library(readr)
+```
+
+Posteriormente descargamos, descomprimimos y guardamos el archivo en el directorio de trabajo, para importarlo usando read_delim(), dandole títulos personalizados y especificando el tipo de columnas como caracter, factor, caracter, caracter, caracter, caracter, fecha en formato mes dia año, fecha en año, factor, caracter y caracter respectivamente.
+
+```{r}
+Titles<-read_delim("netflix_titles.csv",skip = 1,col_names = c("IDShow","Tipo","Titulo","Director","Elenco","País","Fecha de ingreso","Fecha de publicación","Puntuación","Duración","Listado en", "Sinópsis"),
+                 col_types= cols("c","f","c","c","c","c",col_date("%B %d, %Y"),col_date("%Y"),"f","c", "c")) 
+str(Titles)
+```
+
+El conjunto de datos cuenta con 8807 registros.
